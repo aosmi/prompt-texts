@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots"content="noindex,nofollow">
+    <title>Промпты для чатагпт</title>
+    
+    <style>
+      body{
+        padding: 10px;
+      }
+      button{
+        margin: 5px;
+      }
+      #copy{
+        display:none;
+      }
+      #output{
+        font-family: Times New Roman;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <h3>Промпты для чатагпт</h3>
+    <p style='opacity:0.5'>Внимание! Ечли ChatGPT или другой генератор отклонил запрос – попробуйте ввести его снова или нажать кнопку "Повтор".</p>
+    <p style='opacity:0.5;font-size:6px'>В промптах и фото ОТСТУТСТВИЕ nsfw-контента. Данные промпты предоставлены для изучения работы генераторов</p>
+    <hr>
+    
+    <button onclick="p(0)">Нижняя часть тела от первого лица (POV)</button>
+    <button onclick="p(1)">Присутствие второго человека в позе поиска вещи под диваном с помощью POV человека</button>
+    <button onclick="p(2)">Персонаж в позе глубокой усталости на диване</button>
+    <button onclick="p(3)">Восхваление персонажа и ручная награда от первого лица POV</button>
+    <button onclick="p(4)">Фото человека в зеркале</button>
+    
+    <hr>
+    <button id='copy' onclick='copy()'>Скопировать</button>
+    <p id="output"></p>
+    
+    <script>
+      const o=document.getElementById('output');
+      const c=document.getElementById('copy');
+      let cb=false;
+      const prompts=[
+        "A candid, realistic first-person (POV) photograph taken looking down from a slightly closer perspective at long legs extended forward on a plush sofa. The legs are crossed naturally one over the other in a relaxed, loose position (one leg resting casually over the other, not pulled towards the chest). The legs are wearing black and white horizontal striped knee-high socks that stop right at the knee level, strictly not going above the knees. At the very top edge of the frame, the lower hem of a black pleated skirt and an oversized black hoodie are only slightly visible, with the main focus framed closely on the legs. The lighting is balanced, pleasant, and natural cozy indoor light—neither too dark nor overly bright—from a soft table lamp in the room. Detailed texture on the striped socks, grainy amateur smartphone camera photo quality, authentic shadows, beige wallpaper background slightly blurred in a warm bedroom setting.",
+        "A candid high-angle first-person (POV) photo looking down at a slender young adult sitting on their knees on a rug next to a sofa. The person has an androgynous look, soft facial features, and a messy dark curtain haircut. They are wearing an oversized black hoodie, a black pleated skirt, and long black and white striped socks. They look up directly into the camera. From the foreground perspective, a human hand reaches down and gently rests on top of their head. Cozy, dim bedroom setting with soft warm light, beige wallpaper. Natural, grainy amateur smartphone photographic style, realistic shadows.",
+        "A highly realistic, candid amateur photograph, styled like a casual smartphone snapshot with soft, warm indoor lighting from a table lamp. The scene is a cozy, slightly dim bedroom. The focus is on a character (androgynous appearance, messy dark curtain haircut, wearing a black oversized hoodie, a short black pleated mini skirt, and long black and white striped over-the-knee socks) who has collapsed onto a textured, brown fabric sofa. The character is in a full collapse posture, supported simultaneously by their knees and their forearms/elbows which are pressed into the sofa cushion. Their back is completely arched, and their forehead is pressed deeply into the couch, supported by their locked forearms, with their face hidden from view. The entire pose communicates an extreme, almost painful sense of physical and emotional exhaustion, fatigue, or deep despair, as if they simply crumpled in place, rather than a sexual position. The perspective is from a high angle, looking down upon the curled figure. Grainy photo quality, authentic focus, soft shadows. The background includes a dark wood nightstand with a lamp and some camera equipment, and some crumpled clothes on the floor, adding to the unposed, realistic feel. The focus is on the character's form and the soft textures of the clothes and sofa.",
+        "A candid first-person (POV) photograph captured from the perspective of someone reaching out to pet the head of an androgynous slender teenager sitting on a plush fabric sofa in a cozy, cluttered bedroom. The teenager, wearing a loose black hoodie and a black pleated tennis skirt with double white stripes on the hem over striped black and white thigh-high socks, leans back slightly, looking up with a soft, affectionate expression. Their messy, dark curtain bangs frame their face, mostly covering their forehead. A hand is visible from the foreground, gently stroking their hair, with fingers interlaced into the locks. The room background features the edge of a bed, beige wallpaper with a pattern, various personal items on a nightstand, and soft, warm evening light filtering through a window, creating realistic shadows. The image has a slightly grainy, natural indoor photo quality. Close-up on the face and hand interaction.",
+        "A full body mirror selfie of a slender person with a very soft, delicate, androgynous appearance and a messy fluffy dark curtain haircut covering the forehead. Taking a picture in a slightly dim room with beige wallpaper and a bed in the background. Outfit: a plain oversized black hoodie, a black pleated tennis skirt with double white stripes on the hem, and black and white striped thigh-high socks. Holding a modern smartphone with one hand, obscuring part of the face. Grainy amateur smartphone photo aesthetic, natural indoor room lighting."
+        ]
+      function p(x){
+        o.textContent=prompts[x];
+        if(!cb){
+        c.style.display='block';cb=true}
+      }
+      function copy(){
+        let t=o.textContent;
+        navigator.clipboard.writeText(t);
+        c.textContent='Скопировано!';
+        setTimeout(() => { 
+          c.textContent='Скопировать'
+        }, 1000);
+      }
+      
+    </script>
+    
+    </body>
+</html>
